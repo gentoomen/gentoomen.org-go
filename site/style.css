@@ -1,30 +1,26 @@
-body {
+html, body {
+    height: 100%;
     color: #000;
     margin: 0;
-    background-color: #ddd;
-    font-family: /*"Comic Sans MS",*/ helvetica, verdana, arial, sans-serif;
-    /*text-shadow: 1px 1px 0 #f00, 2px -2px 0 #ff0, -3px 3px 0 #0f0, -4px -4px 0 #0ff, 5px 5px 0 #00f, 6px -6px 0 #f0f;
-}
-h1:hover, h4:hover, p:hover, li:hover {
-    text-shadow: 1px 1px 0 #f0f, 2px -2px 0 #00f, -3px 3px 0 #0ff, -4px -4px 0 #0f0, 5px 5px 0 #ff0, 6px -6px 0 #f00;*/
+    background-color: #D0E0FF;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 /* START header/menu bar */
 
 #header {
     clear: both;
-    background-color: #aaa;
-    font-weight: bold;
+    background-color: #88ABC2;
 }
 
 #header h1 {
-    text-align: center;
+    margin-left: 0.2em;
     margin-top: auto;
     margin-bottom: auto;
+    font-weight: normal;
 }
 
 #header h4 {
-    text-align: center;
     margin-top: auto;
     margin-bottom: auto;
     line-height: 0.5em;
@@ -32,14 +28,16 @@ h1:hover, h4:hover, p:hover, li:hover {
 
 /* #menu { */
 #header ul {
-    background-color: #ccc;
+    background-color: #c0c0ff;
+    margin-top: 0;
     list-style-type: none;
     margin-bottom: 0;
+    padding-left: 1em;
 }
 
 #header ul li {
+    font-size: 0.9em;
     display: inline;
-    padding-left: 1%;
     padding-right: 1%;
 }
 
@@ -48,24 +46,22 @@ h1:hover, h4:hover, p:hover, li:hover {
 }
 
 #header ul li:hover {
-    color: #000;
+    color: #448;
     visibility: visible;
 }
 
 #header ul li a {
     text-decoration: none;
-    color: #44f;
+    color: #000;
     visibility: visible;
 }
 
-#header ul li a span .slash {
-    color: #44f;
-    text-decoration: none;
-    visibility: hidden;
+#header ul li a:hover:after {
+    content: "/";
 }
 
 #header ul li a:hover {
-    color: #000;
+    color: #448;
 }
 
 /* END header/menu bar */
@@ -74,23 +70,22 @@ h1:hover, h4:hover, p:hover, li:hover {
 #side {
     width: 17.5%;
     float: left;
-    background-color: #e8e8e8;
-    height: 100%;
+    min-height: 100%;
     font-size: 0.9em;
+    background-color: #D0E0FF;
 }
 
 #side .sidebar {
-    padding-left: 10%;
+    padding-left: 5%;
 }
 
 #side li {
     list-style-type: none;
-    font-weight: bold;
 }
 
 #side a {
     text-decoration: none;
-    color: #44f;
+    color: #444;
 }
 
 #side ul li {
@@ -98,24 +93,21 @@ h1:hover, h4:hover, p:hover, li:hover {
 }
 
 #side ul li:hover {
-    color: #000;
     visibility: visible;
 }
 
 #side ul li a {
     text-decoration: none;
-    color: #44f;
+    color: #222;
     visibility: visible;
 }
 
-#side ul li a span .slash {
-    color: #44f;
-    text-decoration: none;
-    visibility: hidden;
+#side ul li a:hover:after {
+    content: "/";
 }
 
 #side ul li a:hover {
-    color: #000;
+    color: #44f;
 }
 
 #side .selected {
@@ -126,7 +118,9 @@ h1:hover, h4:hover, p:hover, li:hover {
 
 /* BEGIN content */
 #content {
+    min-height: 100%;
     padding: 1%;
+    font-size: 0.9em;
     background-color: #fff;
     margin-top: auto;
     margin-bottom: auto;
@@ -159,7 +153,7 @@ h1:hover, h4:hover, p:hover, li:hover {
 /* BEGIN footer */
 #footer {
     clear: both;
-    background-color: #aaa;
+    background-color: #88ABC2;
 }
 
 #footer p {
