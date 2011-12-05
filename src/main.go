@@ -2,28 +2,23 @@ package main
 
 import (
 	"web"
-	"io/ioutil"
-	md "./markdown"
-	"bytes"
-	"fmt"
-	"strings"
+    "./gentoomen"
+    "io/ioutil"
 )
 
-func hello(val string) string {
-	filename := strings.SplitN(val, "/", 2)
-	b,_ := ioutil.ReadFile("./"+filename[1])
-	fmt.Println(filename)
-	fmt.Println(val)
-	doc := md.Parse(string(b), md.Extensions{Smart: true})
+func getStyle(context *web.Context) {
+    b, err := ioutil.ReadFile("style.css")
+    context.SetHeader("Content-Type", "text/css", true)
+    if err != nil {
+        context.WriteString(err.String())
+    }
 
-	var buf bytes.Buffer
-
-	w := bytes.NewBuffer(buf.Bytes())
-	doc.WriteHtml(w)
-	return w.String()
+    context.Write(b)
 }
 
 func main() {
-    web.Get("/(.*)", hello)
-    web.RunFcgi("0.0.0.0:6850")
+    web.Get("/style.css", getStyle)
+    web.Get("/(.*)", gentoomen.GetPage)
+    //web.Run("0.0.0.0:8080")
+    web.RunFcgi("0.0.0.0:6580")
 }
