@@ -41,23 +41,23 @@ html, body {
     padding-right: 1%;
 }
 
-#header ul li {
-    visibility: hidden;
-}
-
 #header ul li:hover {
     color: #448;
-    visibility: visible;
 }
 
 #header ul li a {
     text-decoration: none;
     color: #000;
-    visibility: visible;
+}
+
+#header ul li a:after {
+    content: "/";
+    visibility: hidden;
 }
 
 #header ul li a:hover:after {
     content: "/";
+    visibility: visible;
 }
 
 #header ul li a:hover {
@@ -71,7 +71,7 @@ html, body {
     width: 17.5%;
     float: left;
     min-height: 100%;
-    font-size: 0.9em;
+    font-size: 0.8em;
     background-color: #D0E0FF;
 }
 
@@ -88,32 +88,24 @@ html, body {
     color: #444;
 }
 
-#side ul li {
-    visibility: hidden;
-}
-
-#side ul li:hover {
-    visibility: visible;
-}
-
 #side ul li a {
     text-decoration: none;
     color: #222;
-    visibility: visible;
+}
+
+#side ul li a:after {
+    content: "/";
+    visibility: hidden;
 }
 
 #side ul li a:hover:after {
     content: "/";
+    visibility: visible;
 }
 
 #side ul li a:hover {
     color: #44f;
 }
-
-#side .selected {
-    visibility: visible;
-}
-
 /* END side pane */
 
 /* BEGIN content */
